@@ -1,0 +1,1202 @@
+[
+  {
+    "platform": "Amazon",
+    "product_id": "A100",
+    "product_name": "OnePlus 11 (256GB, Green) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 65720,
+    "discount": 9858,
+    "final_price": 55862,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A101",
+    "product_name": "Realme GT Neo (256GB, White) 5G",
+    "base_product": "Realme GT Neo",
+    "original_price": 79009,
+    "discount": 7110,
+    "final_price": 71899,
+    "availability": false
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A102",
+    "product_name": "Redmi Note 13 (256GB, Green) Model 2023",
+    "base_product": "Redmi Note 13",
+    "original_price": 60009,
+    "discount": 9601,
+    "final_price": 50408,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A103",
+    "product_name": "Realme GT Neo (128GB, White) Model 2023",
+    "base_product": "Realme GT Neo",
+    "original_price": 67337,
+    "discount": 7407,
+    "final_price": 59930,
+    "availability": false
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A104",
+    "product_name": "Google Pixel 7 (256GB, Black)",
+    "base_product": "Google Pixel 7",
+    "original_price": 88376,
+    "discount": 10605,
+    "final_price": 77771,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A105",
+    "product_name": "Samsung Galaxy S23 (128GB, Black) Smartphone",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 47516,
+    "discount": 6652,
+    "final_price": 40864,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A106",
+    "product_name": "OnePlus 11 (256GB, Green) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 88845,
+    "discount": 15103,
+    "final_price": 73742,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A107",
+    "product_name": "Samsung Galaxy S23 (256GB, Blue) 5G",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 61982,
+    "discount": 5578,
+    "final_price": 56404,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A108",
+    "product_name": "Google Pixel 7 (128GB, Blue) 5G",
+    "base_product": "Google Pixel 7",
+    "original_price": 71837,
+    "discount": 3591,
+    "final_price": 68246,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A109",
+    "product_name": "Redmi Note 13 (128GB, Green) Smartphone",
+    "base_product": "Redmi Note 13",
+    "original_price": 76196,
+    "discount": 7619,
+    "final_price": 68577,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A110",
+    "product_name": "Google Pixel 7 (128GB, White) Smartphone",
+    "base_product": "Google Pixel 7",
+    "original_price": 54429,
+    "discount": 5987,
+    "final_price": 48442,
+    "availability": false
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A111",
+    "product_name": "Google Pixel 7 (256GB, Black) Model 2023",
+    "base_product": "Google Pixel 7",
+    "original_price": 75063,
+    "discount": 13511,
+    "final_price": 61552,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A112",
+    "product_name": "Google Pixel 7 (256GB, Green)",
+    "base_product": "Google Pixel 7",
+    "original_price": 68119,
+    "discount": 4087,
+    "final_price": 64032,
+    "availability": false
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A113",
+    "product_name": "OnePlus 11 (128GB, Black)",
+    "base_product": "OnePlus 11",
+    "original_price": 79719,
+    "discount": 9566,
+    "final_price": 70153,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A114",
+    "product_name": "Realme GT Neo (128GB, White) 5G",
+    "base_product": "Realme GT Neo",
+    "original_price": 78573,
+    "discount": 10214,
+    "final_price": 68359,
+    "availability": false
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A115",
+    "product_name": "OnePlus 11 (256GB, Blue) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 53097,
+    "discount": 4778,
+    "final_price": 48319,
+    "availability": false
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A116",
+    "product_name": "iPhone 14 (128GB, Black) Smartphone",
+    "base_product": "iPhone 14",
+    "original_price": 80427,
+    "discount": 10455,
+    "final_price": 69972,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A117",
+    "product_name": "iPhone 14 (256GB, White) Smartphone",
+    "base_product": "iPhone 14",
+    "original_price": 45966,
+    "discount": 2757,
+    "final_price": 43209,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A118",
+    "product_name": "OnePlus 11 (128GB, Black) Smartphone",
+    "base_product": "OnePlus 11",
+    "original_price": 76173,
+    "discount": 9140,
+    "final_price": 67033,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A119",
+    "product_name": "Redmi Note 13 (128GB, Blue)",
+    "base_product": "Redmi Note 13",
+    "original_price": 46637,
+    "discount": 8394,
+    "final_price": 38243,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A120",
+    "product_name": "Realme GT Neo (128GB, Black) 5G",
+    "base_product": "Realme GT Neo",
+    "original_price": 64577,
+    "discount": 9040,
+    "final_price": 55537,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A121",
+    "product_name": "Samsung Galaxy S23 (128GB, Green) Smartphone",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 47745,
+    "discount": 5251,
+    "final_price": 42494,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A122",
+    "product_name": "OnePlus 11 (128GB, Black) Model 2023",
+    "base_product": "OnePlus 11",
+    "original_price": 58766,
+    "discount": 6464,
+    "final_price": 52302,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A123",
+    "product_name": "OnePlus 11 (256GB, Black) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 56224,
+    "discount": 3935,
+    "final_price": 52289,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A124",
+    "product_name": "OnePlus 11 (128GB, Black) Model 2023",
+    "base_product": "OnePlus 11",
+    "original_price": 62798,
+    "discount": 7535,
+    "final_price": 55263,
+    "availability": false
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A125",
+    "product_name": "Realme GT Neo (256GB, Black) Model 2023",
+    "base_product": "Realme GT Neo",
+    "original_price": 75774,
+    "discount": 12123,
+    "final_price": 63651,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A126",
+    "product_name": "Samsung Galaxy S23 (256GB, Blue) 5G",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 51546,
+    "discount": 4123,
+    "final_price": 47423,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A127",
+    "product_name": "Redmi Note 13 (128GB, White) Model 2023",
+    "base_product": "Redmi Note 13",
+    "original_price": 69010,
+    "discount": 7591,
+    "final_price": 61419,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A128",
+    "product_name": "Redmi Note 13 (128GB, White) 5G",
+    "base_product": "Redmi Note 13",
+    "original_price": 84826,
+    "discount": 12723,
+    "final_price": 72103,
+    "availability": true
+  },
+  {
+    "platform": "Amazon",
+    "product_id": "A129",
+    "product_name": "Google Pixel 7 (256GB, Black) 5G",
+    "base_product": "Google Pixel 7",
+    "original_price": 80525,
+    "discount": 13689,
+    "final_price": 66836,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F200",
+    "product_name": "Samsung Galaxy S23 (128GB, White) 5G",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 45272,
+    "discount": 11279,
+    "final_price": 33993,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F201",
+    "product_name": "Samsung Galaxy S23 (256GB, Blue) Model 2023",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 64652,
+    "discount": 10818,
+    "final_price": 53834,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F202",
+    "product_name": "OnePlus 11 (128GB, Blue) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 72185,
+    "discount": 8979,
+    "final_price": 63206,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F203",
+    "product_name": "iPhone 14 (256GB, Green)",
+    "base_product": "iPhone 14",
+    "original_price": 56116,
+    "discount": 4450,
+    "final_price": 51666,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F204",
+    "product_name": "Samsung Galaxy S23 (128GB, White) Smartphone",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 80126,
+    "discount": 5353,
+    "final_price": 74773,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F205",
+    "product_name": "Realme GT Neo (128GB, Green)",
+    "base_product": "Realme GT Neo",
+    "original_price": 59179,
+    "discount": 8798,
+    "final_price": 50381,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F206",
+    "product_name": "Samsung Galaxy S23 (256GB, Green)",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 60454,
+    "discount": 6621,
+    "final_price": 53833,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F207",
+    "product_name": "Samsung Galaxy S23 (128GB, Blue) Model 2023",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 73712,
+    "discount": 4825,
+    "final_price": 68887,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F208",
+    "product_name": "Redmi Note 13 (128GB, Blue) Smartphone",
+    "base_product": "Redmi Note 13",
+    "original_price": 49826,
+    "discount": 4251,
+    "final_price": 45575,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F209",
+    "product_name": "Redmi Note 13 (256GB, White)",
+    "base_product": "Redmi Note 13",
+    "original_price": 58737,
+    "discount": 7800,
+    "final_price": 50937,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F210",
+    "product_name": "Redmi Note 13 (256GB, Black) 5G",
+    "base_product": "Redmi Note 13",
+    "original_price": 46104,
+    "discount": 10336,
+    "final_price": 35768,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F211",
+    "product_name": "Google Pixel 7 (256GB, Green) 5G",
+    "base_product": "Google Pixel 7",
+    "original_price": 77287,
+    "discount": 4234,
+    "final_price": 73053,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F212",
+    "product_name": "OnePlus 11 (128GB, White)",
+    "base_product": "OnePlus 11",
+    "original_price": 76862,
+    "discount": 8536,
+    "final_price": 68326,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F213",
+    "product_name": "Redmi Note 13 (128GB, Blue) 5G",
+    "base_product": "Redmi Note 13",
+    "original_price": 86280,
+    "discount": 10516,
+    "final_price": 75764,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F214",
+    "product_name": "iPhone 14 (128GB, White) 5G",
+    "base_product": "iPhone 14",
+    "original_price": 66782,
+    "discount": 4556,
+    "final_price": 62226,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F215",
+    "product_name": "Realme GT Neo (256GB, Blue)",
+    "base_product": "Realme GT Neo",
+    "original_price": 59192,
+    "discount": 5358,
+    "final_price": 53834,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F216",
+    "product_name": "Realme GT Neo (256GB, Blue)",
+    "base_product": "Realme GT Neo",
+    "original_price": 57637,
+    "discount": 9653,
+    "final_price": 47984,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F217",
+    "product_name": "Google Pixel 7 (256GB, Blue) Model 2023",
+    "base_product": "Google Pixel 7",
+    "original_price": 71430,
+    "discount": 6063,
+    "final_price": 65367,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F218",
+    "product_name": "Samsung Galaxy S23 (128GB, Black)",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 75693,
+    "discount": 9145,
+    "final_price": 66548,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F219",
+    "product_name": "iPhone 14 (128GB, Green) 5G",
+    "base_product": "iPhone 14",
+    "original_price": 78677,
+    "discount": 7925,
+    "final_price": 70752,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F220",
+    "product_name": "iPhone 14 (128GB, Blue) Model 2023",
+    "base_product": "iPhone 14",
+    "original_price": 74204,
+    "discount": 10688,
+    "final_price": 63516,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F221",
+    "product_name": "Redmi Note 13 (128GB, White) Model 2023",
+    "base_product": "Redmi Note 13",
+    "original_price": 83451,
+    "discount": 3089,
+    "final_price": 80362,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F222",
+    "product_name": "Realme GT Neo (128GB, Blue)",
+    "base_product": "Realme GT Neo",
+    "original_price": 54215,
+    "discount": 4401,
+    "final_price": 49814,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F223",
+    "product_name": "Realme GT Neo (128GB, Blue) Model 2023",
+    "base_product": "Realme GT Neo",
+    "original_price": 55842,
+    "discount": 4169,
+    "final_price": 51673,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F224",
+    "product_name": "iPhone 14 (256GB, Black)",
+    "base_product": "iPhone 14",
+    "original_price": 70587,
+    "discount": 6098,
+    "final_price": 64489,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F225",
+    "product_name": "OnePlus 11 (256GB, Black) Smartphone",
+    "base_product": "OnePlus 11",
+    "original_price": 83818,
+    "discount": 5710,
+    "final_price": 78108,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F226",
+    "product_name": "OnePlus 11 (256GB, Blue) Model 2023",
+    "base_product": "OnePlus 11",
+    "original_price": 73183,
+    "discount": 10200,
+    "final_price": 62983,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F227",
+    "product_name": "iPhone 14 (256GB, White) 5G",
+    "base_product": "iPhone 14",
+    "original_price": 56378,
+    "discount": 6022,
+    "final_price": 50356,
+    "availability": true
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F228",
+    "product_name": "iPhone 14 (128GB, White) Model 2023",
+    "base_product": "iPhone 14",
+    "original_price": 65960,
+    "discount": 7024,
+    "final_price": 58936,
+    "availability": false
+  },
+  {
+    "platform": "Flipkart",
+    "product_id": "F229",
+    "product_name": "OnePlus 11 (256GB, Blue) Model 2023",
+    "base_product": "OnePlus 11",
+    "original_price": 55046,
+    "discount": 7512,
+    "final_price": 47534,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M300",
+    "product_name": "Realme GT Neo (256GB, White)",
+    "base_product": "Realme GT Neo",
+    "original_price": 85981,
+    "discount": 5444,
+    "final_price": 80537,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M301",
+    "product_name": "Redmi Note 13 (256GB, White) 5G",
+    "base_product": "Redmi Note 13",
+    "original_price": 46632,
+    "discount": 12402,
+    "final_price": 34230,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M302",
+    "product_name": "Samsung Galaxy S23 (256GB, Black)",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 54299,
+    "discount": 7127,
+    "final_price": 47172,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M303",
+    "product_name": "Samsung Galaxy S23 (256GB, White)",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 67087,
+    "discount": 11999,
+    "final_price": 55088,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M304",
+    "product_name": "Samsung Galaxy S23 (256GB, Green) 5G",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 74367,
+    "discount": 12365,
+    "final_price": 62002,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M305",
+    "product_name": "iPhone 14 (128GB, White) 5G",
+    "base_product": "iPhone 14",
+    "original_price": 76064,
+    "discount": 6473,
+    "final_price": 69591,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M306",
+    "product_name": "Samsung Galaxy S23 (128GB, Green) Smartphone",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 82477,
+    "discount": 14260,
+    "final_price": 68217,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M307",
+    "product_name": "Realme GT Neo (128GB, Black) 5G",
+    "base_product": "Realme GT Neo",
+    "original_price": 58708,
+    "discount": 9789,
+    "final_price": 48919,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M308",
+    "product_name": "Google Pixel 7 (256GB, Green) Smartphone",
+    "base_product": "Google Pixel 7",
+    "original_price": 51607,
+    "discount": 11993,
+    "final_price": 39614,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M309",
+    "product_name": "Google Pixel 7 (128GB, White) 5G",
+    "base_product": "Google Pixel 7",
+    "original_price": 87927,
+    "discount": 11461,
+    "final_price": 76466,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M310",
+    "product_name": "Samsung Galaxy S23 (128GB, White) Model 2023",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 60104,
+    "discount": 5419,
+    "final_price": 54685,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M311",
+    "product_name": "Google Pixel 7 (128GB, Green)",
+    "base_product": "Google Pixel 7",
+    "original_price": 56377,
+    "discount": 9088,
+    "final_price": 47289,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M312",
+    "product_name": "Redmi Note 13 (256GB, White) Model 2023",
+    "base_product": "Redmi Note 13",
+    "original_price": 49428,
+    "discount": 13001,
+    "final_price": 36427,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M313",
+    "product_name": "OnePlus 11 (128GB, Green) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 59643,
+    "discount": 4736,
+    "final_price": 54907,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M314",
+    "product_name": "Redmi Note 13 (256GB, Green) Smartphone",
+    "base_product": "Redmi Note 13",
+    "original_price": 76668,
+    "discount": 9959,
+    "final_price": 66709,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M315",
+    "product_name": "Redmi Note 13 (128GB, White) Model 2023",
+    "base_product": "Redmi Note 13",
+    "original_price": 83839,
+    "discount": 14776,
+    "final_price": 69063,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M316",
+    "product_name": "Samsung Galaxy S23 (128GB, Green) Model 2023",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 59341,
+    "discount": 8517,
+    "final_price": 50824,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M317",
+    "product_name": "OnePlus 11 (128GB, Blue) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 59166,
+    "discount": 8579,
+    "final_price": 50587,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M318",
+    "product_name": "Realme GT Neo (128GB, White) Model 2023",
+    "base_product": "Realme GT Neo",
+    "original_price": 58512,
+    "discount": 10298,
+    "final_price": 48214,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M319",
+    "product_name": "Realme GT Neo (128GB, White)",
+    "base_product": "Realme GT Neo",
+    "original_price": 61837,
+    "discount": 7005,
+    "final_price": 54832,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M320",
+    "product_name": "Google Pixel 7 (256GB, Blue) Model 2023",
+    "base_product": "Google Pixel 7",
+    "original_price": 57820,
+    "discount": 14236,
+    "final_price": 43584,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M321",
+    "product_name": "Samsung Galaxy S23 (256GB, Green) Smartphone",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 76749,
+    "discount": 6282,
+    "final_price": 70467,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M322",
+    "product_name": "Google Pixel 7 (128GB, Blue) Smartphone",
+    "base_product": "Google Pixel 7",
+    "original_price": 84248,
+    "discount": 13467,
+    "final_price": 70781,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M323",
+    "product_name": "iPhone 14 (256GB, Black) 5G",
+    "base_product": "iPhone 14",
+    "original_price": 84894,
+    "discount": 11381,
+    "final_price": 73513,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M324",
+    "product_name": "Realme GT Neo (256GB, Blue) 5G",
+    "base_product": "Realme GT Neo",
+    "original_price": 53230,
+    "discount": 14946,
+    "final_price": 38284,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M325",
+    "product_name": "OnePlus 11 (256GB, Black) Smartphone",
+    "base_product": "OnePlus 11",
+    "original_price": 70949,
+    "discount": 8931,
+    "final_price": 62018,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M326",
+    "product_name": "Samsung Galaxy S23 (256GB, Green) Model 2023",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 83867,
+    "discount": 6991,
+    "final_price": 76876,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M327",
+    "product_name": "Samsung Galaxy S23 (128GB, White) Model 2023",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 63968,
+    "discount": 13199,
+    "final_price": 50769,
+    "availability": true
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M328",
+    "product_name": "iPhone 14 (128GB, White)",
+    "base_product": "iPhone 14",
+    "original_price": 52949,
+    "discount": 11189,
+    "final_price": 41760,
+    "availability": false
+  },
+  {
+    "platform": "Myntra",
+    "product_id": "M329",
+    "product_name": "Google Pixel 7 (256GB, Blue) Model 2023",
+    "base_product": "Google Pixel 7",
+    "original_price": 65032,
+    "discount": 9084,
+    "final_price": 55948,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J400",
+    "product_name": "Redmi Note 13 (256GB, Black) Smartphone",
+    "base_product": "Redmi Note 13",
+    "original_price": 57553,
+    "discount": 0,
+    "final_price": 57553,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J401",
+    "product_name": "Realme GT Neo (256GB, Green)",
+    "base_product": "Realme GT Neo",
+    "original_price": 64443,
+    "discount": 0,
+    "final_price": 64443,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J402",
+    "product_name": "Redmi Note 13 (128GB, Black) 5G",
+    "base_product": "Redmi Note 13",
+    "original_price": 83093,
+    "discount": 0,
+    "final_price": 83093,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J403",
+    "product_name": "Samsung Galaxy S23 (128GB, Black) 5G",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 81767,
+    "discount": 0,
+    "final_price": 81767,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J404",
+    "product_name": "Google Pixel 7 (128GB, White) Smartphone",
+    "base_product": "Google Pixel 7",
+    "original_price": 44872,
+    "discount": 0,
+    "final_price": 44872,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J405",
+    "product_name": "Samsung Galaxy S23 (128GB, White) Smartphone",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 55915,
+    "discount": 0,
+    "final_price": 55915,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J406",
+    "product_name": "iPhone 14 (256GB, White) 5G",
+    "base_product": "iPhone 14",
+    "original_price": 50948,
+    "discount": 0,
+    "final_price": 50948,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J407",
+    "product_name": "OnePlus 11 (256GB, Black)",
+    "base_product": "OnePlus 11",
+    "original_price": 54284,
+    "discount": 0,
+    "final_price": 54284,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J408",
+    "product_name": "Redmi Note 13 (256GB, Blue) 5G",
+    "base_product": "Redmi Note 13",
+    "original_price": 50882,
+    "discount": 0,
+    "final_price": 50882,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J409",
+    "product_name": "Redmi Note 13 (256GB, Green) Model 2023",
+    "base_product": "Redmi Note 13",
+    "original_price": 53693,
+    "discount": 0,
+    "final_price": 53693,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J410",
+    "product_name": "Samsung Galaxy S23 (256GB, Blue) Model 2023",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 46191,
+    "discount": 0,
+    "final_price": 46191,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J411",
+    "product_name": "Google Pixel 7 (128GB, Green)",
+    "base_product": "Google Pixel 7",
+    "original_price": 82660,
+    "discount": 0,
+    "final_price": 82660,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J412",
+    "product_name": "iPhone 14 (256GB, Green) 5G",
+    "base_product": "iPhone 14",
+    "original_price": 74104,
+    "discount": 0,
+    "final_price": 74104,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J413",
+    "product_name": "Google Pixel 7 (128GB, Green) Smartphone",
+    "base_product": "Google Pixel 7",
+    "original_price": 86946,
+    "discount": 0,
+    "final_price": 86946,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J414",
+    "product_name": "OnePlus 11 (256GB, Blue) Smartphone",
+    "base_product": "OnePlus 11",
+    "original_price": 68224,
+    "discount": 0,
+    "final_price": 68224,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J415",
+    "product_name": "OnePlus 11 (256GB, Black) Model 2023",
+    "base_product": "OnePlus 11",
+    "original_price": 79088,
+    "discount": 0,
+    "final_price": 79088,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J416",
+    "product_name": "Realme GT Neo (128GB, Green)",
+    "base_product": "Realme GT Neo",
+    "original_price": 61089,
+    "discount": 0,
+    "final_price": 61089,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J417",
+    "product_name": "Google Pixel 7 (128GB, Blue) Model 2023",
+    "base_product": "Google Pixel 7",
+    "original_price": 60637,
+    "discount": 0,
+    "final_price": 60637,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J418",
+    "product_name": "iPhone 14 (128GB, Black)",
+    "base_product": "iPhone 14",
+    "original_price": 70503,
+    "discount": 0,
+    "final_price": 70503,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J419",
+    "product_name": "iPhone 14 (256GB, Blue) 5G",
+    "base_product": "iPhone 14",
+    "original_price": 79791,
+    "discount": 0,
+    "final_price": 79791,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J420",
+    "product_name": "Redmi Note 13 (128GB, Black) Smartphone",
+    "base_product": "Redmi Note 13",
+    "original_price": 75423,
+    "discount": 0,
+    "final_price": 75423,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J421",
+    "product_name": "Google Pixel 7 (128GB, White) 5G",
+    "base_product": "Google Pixel 7",
+    "original_price": 87794,
+    "discount": 0,
+    "final_price": 87794,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J422",
+    "product_name": "OnePlus 11 (128GB, Blue) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 57493,
+    "discount": 0,
+    "final_price": 57493,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J423",
+    "product_name": "Realme GT Neo (128GB, Black)",
+    "base_product": "Realme GT Neo",
+    "original_price": 49227,
+    "discount": 0,
+    "final_price": 49227,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J424",
+    "product_name": "Redmi Note 13 (128GB, Black) 5G",
+    "base_product": "Redmi Note 13",
+    "original_price": 83388,
+    "discount": 0,
+    "final_price": 83388,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J425",
+    "product_name": "Realme GT Neo (256GB, White)",
+    "base_product": "Realme GT Neo",
+    "original_price": 75082,
+    "discount": 0,
+    "final_price": 75082,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J426",
+    "product_name": "Redmi Note 13 (128GB, Green) 5G",
+    "base_product": "Redmi Note 13",
+    "original_price": 46464,
+    "discount": 0,
+    "final_price": 46464,
+    "availability": false
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J427",
+    "product_name": "Samsung Galaxy S23 (256GB, Black)",
+    "base_product": "Samsung Galaxy S23",
+    "original_price": 84314,
+    "discount": 0,
+    "final_price": 84314,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J428",
+    "product_name": "OnePlus 11 (128GB, White) 5G",
+    "base_product": "OnePlus 11",
+    "original_price": 66917,
+    "discount": 0,
+    "final_price": 66917,
+    "availability": true
+  },
+  {
+    "platform": "Ajio",
+    "product_id": "J429",
+    "product_name": "Realme GT Neo (256GB, Black)",
+    "base_product": "Realme GT Neo",
+    "original_price": 69121,
+    "discount": 0,
+    "final_price": 69121,
+    "availability": false
+  }
+]

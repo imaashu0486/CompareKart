@@ -1,0 +1,182 @@
+[
+  {
+    "sku": "J400",
+    "label": "Redmi Note 13 (256GB, Black) Smartphone",
+    "selling_price": 57553,
+    "availability_status": true
+  },
+  {
+    "sku": "J401",
+    "label": "Realme GT Neo (256GB, Green)",
+    "selling_price": 64443,
+    "availability_status": false
+  },
+  {
+    "sku": "J402",
+    "label": "Redmi Note 13 (128GB, Black) 5G",
+    "selling_price": 83093,
+    "availability_status": false
+  },
+  {
+    "sku": "J403",
+    "label": "Samsung Galaxy S23 (128GB, Black) 5G",
+    "selling_price": 81767,
+    "availability_status": false
+  },
+  {
+    "sku": "J404",
+    "label": "Google Pixel 7 (128GB, White) Smartphone",
+    "selling_price": 44872,
+    "availability_status": false
+  },
+  {
+    "sku": "J405",
+    "label": "Samsung Galaxy S23 (128GB, White) Smartphone",
+    "selling_price": 55915,
+    "availability_status": true
+  },
+  {
+    "sku": "J406",
+    "label": "iPhone 14 (256GB, White) 5G",
+    "selling_price": 50948,
+    "availability_status": false
+  },
+  {
+    "sku": "J407",
+    "label": "OnePlus 11 (256GB, Black)",
+    "selling_price": 54284,
+    "availability_status": true
+  },
+  {
+    "sku": "J408",
+    "label": "Redmi Note 13 (256GB, Blue) 5G",
+    "selling_price": 50882,
+    "availability_status": true
+  },
+  {
+    "sku": "J409",
+    "label": "Redmi Note 13 (256GB, Green) Model 2023",
+    "selling_price": 53693,
+    "availability_status": false
+  },
+  {
+    "sku": "J410",
+    "label": "Samsung Galaxy S23 (256GB, Blue) Model 2023",
+    "selling_price": 46191,
+    "availability_status": false
+  },
+  {
+    "sku": "J411",
+    "label": "Google Pixel 7 (128GB, Green)",
+    "selling_price": 82660,
+    "availability_status": true
+  },
+  {
+    "sku": "J412",
+    "label": "iPhone 14 (256GB, Green) 5G",
+    "selling_price": 74104,
+    "availability_status": false
+  },
+  {
+    "sku": "J413",
+    "label": "Google Pixel 7 (128GB, Green) Smartphone",
+    "selling_price": 86946,
+    "availability_status": true
+  },
+  {
+    "sku": "J414",
+    "label": "OnePlus 11 (256GB, Blue) Smartphone",
+    "selling_price": 68224,
+    "availability_status": true
+  },
+  {
+    "sku": "J415",
+    "label": "OnePlus 11 (256GB, Black) Model 2023",
+    "selling_price": 79088,
+    "availability_status": false
+  },
+  {
+    "sku": "J416",
+    "label": "Realme GT Neo (128GB, Green)",
+    "selling_price": 61089,
+    "availability_status": true
+  },
+  {
+    "sku": "J417",
+    "label": "Google Pixel 7 (128GB, Blue) Model 2023",
+    "selling_price": 60637,
+    "availability_status": false
+  },
+  {
+    "sku": "J418",
+    "label": "iPhone 14 (128GB, Black)",
+    "selling_price": 70503,
+    "availability_status": false
+  },
+  {
+    "sku": "J419",
+    "label": "iPhone 14 (256GB, Blue) 5G",
+    "selling_price": 79791,
+    "availability_status": false
+  },
+  {
+    "sku": "J420",
+    "label": "Redmi Note 13 (128GB, Black) Smartphone",
+    "selling_price": 75423,
+    "availability_status": true
+  },
+  {
+    "sku": "J421",
+    "label": "Google Pixel 7 (128GB, White) 5G",
+    "selling_price": 87794,
+    "availability_status": false
+  },
+  {
+    "sku": "J422",
+    "label": "OnePlus 11 (128GB, Blue) 5G",
+    "selling_price": 57493,
+    "availability_status": true
+  },
+  {
+    "sku": "J423",
+    "label": "Realme GT Neo (128GB, Black)",
+    "selling_price": 49227,
+    "availability_status": true
+  },
+  {
+    "sku": "J424",
+    "label": "Redmi Note 13 (128GB, Black) 5G",
+    "selling_price": 83388,
+    "availability_status": true
+  },
+  {
+    "sku": "J425",
+    "label": "Realme GT Neo (256GB, White)",
+    "selling_price": 75082,
+    "availability_status": false
+  },
+  {
+    "sku": "J426",
+    "label": "Redmi Note 13 (128GB, Green) 5G",
+    "selling_price": 46464,
+    "availability_status": false
+  },
+  {
+    "sku": "J427",
+    "label": "Samsung Galaxy S23 (256GB, Black)",
+    "selling_price": 84314,
+    "availability_status": true
+  },
+  {
+    "sku": "J428",
+    "label": "OnePlus 11 (128GB, White) 5G",
+    "selling_price": 66917,
+    "availability_status": true
+  },
+  {
+    "sku": "J429",
+    "label": "Realme GT Neo (256GB, Black)",
+    "selling_price": 69121,
+    "availability_status": false
+  }
+]

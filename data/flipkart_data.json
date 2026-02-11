@@ -1,0 +1,212 @@
+[
+  {
+    "product_id": "F200",
+    "name": "Samsung Galaxy S23 (128GB, White) 5G",
+    "price": 45272,
+    "offer": 11279,
+    "availability": "available"
+  },
+  {
+    "product_id": "F201",
+    "name": "Samsung Galaxy S23 (256GB, Blue) Model 2023",
+    "price": 64652,
+    "offer": 10818,
+    "availability": "available"
+  },
+  {
+    "product_id": "F202",
+    "name": "OnePlus 11 (128GB, Blue) 5G",
+    "price": 72185,
+    "offer": 8979,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F203",
+    "name": "iPhone 14 (256GB, Green)",
+    "price": 56116,
+    "offer": 4450,
+    "availability": "available"
+  },
+  {
+    "product_id": "F204",
+    "name": "Samsung Galaxy S23 (128GB, White) Smartphone",
+    "price": 80126,
+    "offer": 5353,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F205",
+    "name": "Realme GT Neo (128GB, Green)",
+    "price": 59179,
+    "offer": 8798,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F206",
+    "name": "Samsung Galaxy S23 (256GB, Green)",
+    "price": 60454,
+    "offer": 6621,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F207",
+    "name": "Samsung Galaxy S23 (128GB, Blue) Model 2023",
+    "price": 73712,
+    "offer": 4825,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F208",
+    "name": "Redmi Note 13 (128GB, Blue) Smartphone",
+    "price": 49826,
+    "offer": 4251,
+    "availability": "available"
+  },
+  {
+    "product_id": "F209",
+    "name": "Redmi Note 13 (256GB, White)",
+    "price": 58737,
+    "offer": 7800,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F210",
+    "name": "Redmi Note 13 (256GB, Black) 5G",
+    "price": 46104,
+    "offer": 10336,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F211",
+    "name": "Google Pixel 7 (256GB, Green) 5G",
+    "price": 77287,
+    "offer": 4234,
+    "availability": "available"
+  },
+  {
+    "product_id": "F212",
+    "name": "OnePlus 11 (128GB, White)",
+    "price": 76862,
+    "offer": 8536,
+    "availability": "available"
+  },
+  {
+    "product_id": "F213",
+    "name": "Redmi Note 13 (128GB, Blue) 5G",
+    "price": 86280,
+    "offer": 10516,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F214",
+    "name": "iPhone 14 (128GB, White) 5G",
+    "price": 66782,
+    "offer": 4556,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F215",
+    "name": "Realme GT Neo (256GB, Blue)",
+    "price": 59192,
+    "offer": 5358,
+    "availability": "available"
+  },
+  {
+    "product_id": "F216",
+    "name": "Realme GT Neo (256GB, Blue)",
+    "price": 57637,
+    "offer": 9653,
+    "availability": "available"
+  },
+  {
+    "product_id": "F217",
+    "name": "Google Pixel 7 (256GB, Blue) Model 2023",
+    "price": 71430,
+    "offer": 6063,
+    "availability": "available"
+  },
+  {
+    "product_id": "F218",
+    "name": "Samsung Galaxy S23 (128GB, Black)",
+    "price": 75693,
+    "offer": 9145,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F219",
+    "name": "iPhone 14 (128GB, Green) 5G",
+    "price": 78677,
+    "offer": 7925,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F220",
+    "name": "iPhone 14 (128GB, Blue) Model 2023",
+    "price": 74204,
+    "offer": 10688,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F221",
+    "name": "Redmi Note 13 (128GB, White) Model 2023",
+    "price": 83451,
+    "offer": 3089,
+    "availability": "available"
+  },
+  {
+    "product_id": "F222",
+    "name": "Realme GT Neo (128GB, Blue)",
+    "price": 54215,
+    "offer": 4401,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F223",
+    "name": "Realme GT Neo (128GB, Blue) Model 2023",
+    "price": 55842,
+    "offer": 4169,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F224",
+    "name": "iPhone 14 (256GB, Black)",
+    "price": 70587,
+    "offer": 6098,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F225",
+    "name": "OnePlus 11 (256GB, Black) Smartphone",
+    "price": 83818,
+    "offer": 5710,
+    "availability": "available"
+  },
+  {
+    "product_id": "F226",
+    "name": "OnePlus 11 (256GB, Blue) Model 2023",
+    "price": 73183,
+    "offer": 10200,
+    "availability": "available"
+  },
+  {
+    "product_id": "F227",
+    "name": "iPhone 14 (256GB, White) 5G",
+    "price": 56378,
+    "offer": 6022,
+    "availability": "available"
+  },
+  {
+    "product_id": "F228",
+    "name": "iPhone 14 (128GB, White) Model 2023",
+    "price": 65960,
+    "offer": 7024,
+    "availability": "unavailable"
+  },
+  {
+    "product_id": "F229",
+    "name": "OnePlus 11 (256GB, Blue) Model 2023",
+    "price": 55046,
+    "offer": 7512,
+    "availability": "available"
+  }
+]

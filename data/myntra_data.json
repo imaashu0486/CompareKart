@@ -1,0 +1,212 @@
+[
+  {
+    "itemCode": "M300",
+    "productName": "Realme GT Neo (256GB, White)",
+    "mrp": 85981,
+    "discount": 5444,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M301",
+    "productName": "Redmi Note 13 (256GB, White) 5G",
+    "mrp": 46632,
+    "discount": 12402,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M302",
+    "productName": "Samsung Galaxy S23 (256GB, Black)",
+    "mrp": 54299,
+    "discount": 7127,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M303",
+    "productName": "Samsung Galaxy S23 (256GB, White)",
+    "mrp": 67087,
+    "discount": 11999,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M304",
+    "productName": "Samsung Galaxy S23 (256GB, Green) 5G",
+    "mrp": 74367,
+    "discount": 12365,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M305",
+    "productName": "iPhone 14 (128GB, White) 5G",
+    "mrp": 76064,
+    "discount": 6473,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M306",
+    "productName": "Samsung Galaxy S23 (128GB, Green) Smartphone",
+    "mrp": 82477,
+    "discount": 14260,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M307",
+    "productName": "Realme GT Neo (128GB, Black) 5G",
+    "mrp": 58708,
+    "discount": 9789,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M308",
+    "productName": "Google Pixel 7 (256GB, Green) Smartphone",
+    "mrp": 51607,
+    "discount": 11993,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M309",
+    "productName": "Google Pixel 7 (128GB, White) 5G",
+    "mrp": 87927,
+    "discount": 11461,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M310",
+    "productName": "Samsung Galaxy S23 (128GB, White) Model 2023",
+    "mrp": 60104,
+    "discount": 5419,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M311",
+    "productName": "Google Pixel 7 (128GB, Green)",
+    "mrp": 56377,
+    "discount": 9088,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M312",
+    "productName": "Redmi Note 13 (256GB, White) Model 2023",
+    "mrp": 49428,
+    "discount": 13001,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M313",
+    "productName": "OnePlus 11 (128GB, Green) 5G",
+    "mrp": 59643,
+    "discount": 4736,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M314",
+    "productName": "Redmi Note 13 (256GB, Green) Smartphone",
+    "mrp": 76668,
+    "discount": 9959,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M315",
+    "productName": "Redmi Note 13 (128GB, White) Model 2023",
+    "mrp": 83839,
+    "discount": 14776,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M316",
+    "productName": "Samsung Galaxy S23 (128GB, Green) Model 2023",
+    "mrp": 59341,
+    "discount": 8517,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M317",
+    "productName": "OnePlus 11 (128GB, Blue) 5G",
+    "mrp": 59166,
+    "discount": 8579,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M318",
+    "productName": "Realme GT Neo (128GB, White) Model 2023",
+    "mrp": 58512,
+    "discount": 10298,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M319",
+    "productName": "Realme GT Neo (128GB, White)",
+    "mrp": 61837,
+    "discount": 7005,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M320",
+    "productName": "Google Pixel 7 (256GB, Blue) Model 2023",
+    "mrp": 57820,
+    "discount": 14236,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M321",
+    "productName": "Samsung Galaxy S23 (256GB, Green) Smartphone",
+    "mrp": 76749,
+    "discount": 6282,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M322",
+    "productName": "Google Pixel 7 (128GB, Blue) Smartphone",
+    "mrp": 84248,
+    "discount": 13467,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M323",
+    "productName": "iPhone 14 (256GB, Black) 5G",
+    "mrp": 84894,
+    "discount": 11381,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M324",
+    "productName": "Realme GT Neo (256GB, Blue) 5G",
+    "mrp": 53230,
+    "discount": 14946,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M325",
+    "productName": "OnePlus 11 (256GB, Black) Smartphone",
+    "mrp": 70949,
+    "discount": 8931,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M326",
+    "productName": "Samsung Galaxy S23 (256GB, Green) Model 2023",
+    "mrp": 83867,
+    "discount": 6991,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M327",
+    "productName": "Samsung Galaxy S23 (128GB, White) Model 2023",
+    "mrp": 63968,
+    "discount": 13199,
+    "stock": "yes"
+  },
+  {
+    "itemCode": "M328",
+    "productName": "iPhone 14 (128GB, White)",
+    "mrp": 52949,
+    "discount": 11189,
+    "stock": "no"
+  },
+  {
+    "itemCode": "M329",
+    "productName": "Google Pixel 7 (256GB, Blue) Model 2023",
+    "mrp": 65032,
+    "discount": 9084,
+    "stock": "yes"
+  }
+]

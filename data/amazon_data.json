@@ -1,0 +1,212 @@
+[
+  {
+    "id": "A100",
+    "title": "OnePlus 11 (256GB, Green) 5G",
+    "cost": 65720,
+    "discount_percent": 15,
+    "in_stock": true
+  },
+  {
+    "id": "A101",
+    "title": "Realme GT Neo (256GB, White) 5G",
+    "cost": 79009,
+    "discount_percent": 9,
+    "in_stock": false
+  },
+  {
+    "id": "A102",
+    "title": "Redmi Note 13 (256GB, Green) Model 2023",
+    "cost": 60009,
+    "discount_percent": 16,
+    "in_stock": true
+  },
+  {
+    "id": "A103",
+    "title": "Realme GT Neo (128GB, White) Model 2023",
+    "cost": 67337,
+    "discount_percent": 11,
+    "in_stock": false
+  },
+  {
+    "id": "A104",
+    "title": "Google Pixel 7 (256GB, Black)",
+    "cost": 88376,
+    "discount_percent": 12,
+    "in_stock": true
+  },
+  {
+    "id": "A105",
+    "title": "Samsung Galaxy S23 (128GB, Black) Smartphone",
+    "cost": 47516,
+    "discount_percent": 14,
+    "in_stock": true
+  },
+  {
+    "id": "A106",
+    "title": "OnePlus 11 (256GB, Green) 5G",
+    "cost": 88845,
+    "discount_percent": 17,
+    "in_stock": true
+  },
+  {
+    "id": "A107",
+    "title": "Samsung Galaxy S23 (256GB, Blue) 5G",
+    "cost": 61982,
+    "discount_percent": 9,
+    "in_stock": true
+  },
+  {
+    "id": "A108",
+    "title": "Google Pixel 7 (128GB, Blue) 5G",
+    "cost": 71837,
+    "discount_percent": 5,
+    "in_stock": true
+  },
+  {
+    "id": "A109",
+    "title": "Redmi Note 13 (128GB, Green) Smartphone",
+    "cost": 76196,
+    "discount_percent": 10,
+    "in_stock": true
+  },
+  {
+    "id": "A110",
+    "title": "Google Pixel 7 (128GB, White) Smartphone",
+    "cost": 54429,
+    "discount_percent": 11,
+    "in_stock": false
+  },
+  {
+    "id": "A111",
+    "title": "Google Pixel 7 (256GB, Black) Model 2023",
+    "cost": 75063,
+    "discount_percent": 18,
+    "in_stock": true
+  },
+  {
+    "id": "A112",
+    "title": "Google Pixel 7 (256GB, Green)",
+    "cost": 68119,
+    "discount_percent": 6,
+    "in_stock": false
+  },
+  {
+    "id": "A113",
+    "title": "OnePlus 11 (128GB, Black)",
+    "cost": 79719,
+    "discount_percent": 12,
+    "in_stock": true
+  },
+  {
+    "id": "A114",
+    "title": "Realme GT Neo (128GB, White) 5G",
+    "cost": 78573,
+    "discount_percent": 13,
+    "in_stock": false
+  },
+  {
+    "id": "A115",
+    "title": "OnePlus 11 (256GB, Blue) 5G",
+    "cost": 53097,
+    "discount_percent": 9,
+    "in_stock": false
+  },
+  {
+    "id": "A116",
+    "title": "iPhone 14 (128GB, Black) Smartphone",
+    "cost": 80427,
+    "discount_percent": 13,
+    "in_stock": true
+  },
+  {
+    "id": "A117",
+    "title": "iPhone 14 (256GB, White) Smartphone",
+    "cost": 45966,
+    "discount_percent": 6,
+    "in_stock": true
+  },
+  {
+    "id": "A118",
+    "title": "OnePlus 11 (128GB, Black) Smartphone",
+    "cost": 76173,
+    "discount_percent": 12,
+    "in_stock": true
+  },
+  {
+    "id": "A119",
+    "title": "Redmi Note 13 (128GB, Blue)",
+    "cost": 46637,
+    "discount_percent": 18,
+    "in_stock": true
+  },
+  {
+    "id": "A120",
+    "title": "Realme GT Neo (128GB, Black) 5G",
+    "cost": 64577,
+    "discount_percent": 14,
+    "in_stock": true
+  },
+  {
+    "id": "A121",
+    "title": "Samsung Galaxy S23 (128GB, Green) Smartphone",
+    "cost": 47745,
+    "discount_percent": 11,
+    "in_stock": true
+  },
+  {
+    "id": "A122",
+    "title": "OnePlus 11 (128GB, Black) Model 2023",
+    "cost": 58766,
+    "discount_percent": 11,
+    "in_stock": true
+  },
+  {
+    "id": "A123",
+    "title": "OnePlus 11 (256GB, Black) 5G",
+    "cost": 56224,
+    "discount_percent": 7,
+    "in_stock": true
+  },
+  {
+    "id": "A124",
+    "title": "OnePlus 11 (128GB, Black) Model 2023",
+    "cost": 62798,
+    "discount_percent": 12,
+    "in_stock": false
+  },
+  {
+    "id": "A125",
+    "title": "Realme GT Neo (256GB, Black) Model 2023",
+    "cost": 75774,
+    "discount_percent": 16,
+    "in_stock": true
+  },
+  {
+    "id": "A126",
+    "title": "Samsung Galaxy S23 (256GB, Blue) 5G",
+    "cost": 51546,
+    "discount_percent": 8,
+    "in_stock": true
+  },
+  {
+    "id": "A127",
+    "title": "Redmi Note 13 (128GB, White) Model 2023",
+    "cost": 69010,
+    "discount_percent": 11,
+    "in_stock": true
+  },
+  {
+    "id": "A128",
+    "title": "Redmi Note 13 (128GB, White) 5G",
+    "cost": 84826,
+    "discount_percent": 15,
+    "in_stock": true
+  },
+  {
+    "id": "A129",
+    "title": "Google Pixel 7 (256GB, Black) 5G",
+    "cost": 80525,
+    "discount_percent": 17,
+    "in_stock": false
+  }
+]
