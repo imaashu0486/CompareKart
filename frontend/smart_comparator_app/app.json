@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "CompareKart",
+    "slug": "comparekart",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/comparekart-icon.png",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.comparekart.smartcomparator",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/comparekart-adaptive-foreground.png",
+        "backgroundColor": "#111827"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
