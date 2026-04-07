@@ -58,3 +58,7 @@ uvicorn*.log
 # Local data
 *.db
 *.sqlite
+
+# Private local documentation (do not push)
+00_PROJECT_DEEP_DIVE_LOCAL.txt
+*_LOCAL_NOTES.md
