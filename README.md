@@ -240,17 +240,17 @@ This avoids hardcoded machine-specific addresses in most cases.
 
 ## 14. Useful URLs
 
-- API health: `http://localhost:8000/health`
-- API docs: `http://localhost:8000/docs`
+- API health: [http://localhost:8000/health](http://localhost:8000/health)
+- API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
 ## 14.1 Live links
 
-- Live backend base URL: `https://comparekart-puc5.onrender.com`
-- Live backend health: `https://comparekart-puc5.onrender.com/health`
-- Latest Android build page: `https://expo.dev/accounts/imaashu0486/projects/comparekart/builds/19093902-e954-411f-ac8f-d2867edcc42b`
-- Latest Android APK direct download: `https://expo.dev/artifacts/eas/46iZwzzBS8h2us8rRrvnhx.apk`
+- Live backend base URL: [https://comparekart-puc5.onrender.com](https://comparekart-puc5.onrender.com)
+- Live backend health: [https://comparekart-puc5.onrender.com/health](https://comparekart-puc5.onrender.com/health)
+- Latest Android build page: [https://expo.dev/accounts/imaashu0486/projects/comparekart/builds/19093902-e954-411f-ac8f-d2867edcc42b](https://expo.dev/accounts/imaashu0486/projects/comparekart/builds/19093902-e954-411f-ac8f-d2867edcc42b)
+- Latest Android APK direct download: [https://expo.dev/artifacts/eas/46iZwzzBS8h2us8rRrvnhx.apk](https://expo.dev/artifacts/eas/46iZwzzBS8h2us8rRrvnhx.apk)
 
 Note: direct artifact links can rotate/expire; if a link fails, open the latest build page and download the newest artifact.
 
@@ -282,7 +282,7 @@ Deploy steps:
 	- `JWT_SECRET` = strong random secret
 	- `JWT_EXPIRE_MINUTES` = `10080`
 4. Deploy and verify:
-	- `https://<your-backend-domain>/health`
+	- [https://your-backend-domain/health](https://your-backend-domain/health)
 
 ### C) Android APK (Expo EAS)
 
