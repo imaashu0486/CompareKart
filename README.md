@@ -245,6 +245,17 @@ This avoids hardcoded machine-specific addresses in most cases.
 
 ---
 
+## 14.1 Live links
+
+- Live backend base URL: `https://comparekart-puc5.onrender.com`
+- Live backend health: `https://comparekart-puc5.onrender.com/health`
+- Latest Android build page: `https://expo.dev/accounts/imaashu0486/projects/comparekart/builds/19093902-e954-411f-ac8f-d2867edcc42b`
+- Latest Android APK direct download: `https://expo.dev/artifacts/eas/46iZwzzBS8h2us8rRrvnhx.apk`
+
+Note: direct artifact links can rotate/expire; if a link fails, open the latest build page and download the newest artifact.
+
+---
+
 ## 15. Deploy online (backend + database + APK)
 
 ### A) Online database (MongoDB Atlas)
