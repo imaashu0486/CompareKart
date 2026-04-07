@@ -5,6 +5,7 @@ import re
 import time
 from datetime import datetime
 from datetime import timedelta
+from datetime import timezone
 from typing import Any, Dict, Optional
 from uuid import uuid4
 
@@ -66,12 +67,20 @@ def _normalize_doc(doc: Dict[str, Any]) -> ProductResponse:
             flipkart=prices.get("flipkart"),
             croma=prices.get("croma"),
         ),
-        image_url=doc.get("image_url"),
+        image_url=_pick_best_image(doc.get("image_url")),
         best_price=best_price,
         best_platform=best_platform,
         specifications=doc.get("specifications", {}),
-        last_updated=doc.get("last_updated"),
+        last_updated=_as_utc_datetime(doc.get("last_updated")),
     )
+
+
+def _as_utc_datetime(value: Any) -> Optional[datetime]:
+    if not isinstance(value, datetime):
+        return None
+    if value.tzinfo is None:
+        return value.replace(tzinfo=timezone.utc)
+    return value.astimezone(timezone.utc)
 
 
 def _doc_group_key(doc: Dict[str, Any]) -> str:
@@ -193,6 +202,33 @@ def _sanitize_prices(category: Optional[str], prices: Dict[str, Any]) -> Dict[st
     }
 
 
+def _is_usable_image_url(url: Any) -> bool:
+    raw = str(url or "").strip()
+    if not raw:
+        return False
+
+    lowered = raw.lower()
+    if not (lowered.startswith("http://") or lowered.startswith("https://")):
+        return False
+
+    blocked_tokens = [
+        "data:image",
+        "1x1",
+        "spacer",
+        "placeholder",
+        "no_image",
+        "image-not-available",
+    ]
+    return not any(token in lowered for token in blocked_tokens)
+
+
+def _pick_best_image(*candidates: Any) -> Optional[str]:
+    for item in candidates:
+        if _is_usable_image_url(item):
+            return str(item).strip()
+    return None
+
+
 def _is_spec_placeholder(value: Any) -> bool:
     if value is None:
         return True
@@ -256,15 +292,28 @@ def _search_platform_price_by_query(platform: str, query: str) -> Dict[str, Any]
         else:
             results = CromaService().search_products(query, max_results=5)
 
+        image_only_fallback: Optional[Dict[str, Any]] = None
         for item in results:
             price = item.get("price")
-            if price is None:
-                continue
-            return {
-                "price": price,
-                "title": item.get("title"),
-                "image_url": item.get("image_url"),
-            }
+            image = item.get("image_url")
+            title = item.get("title")
+
+            if price is not None:
+                return {
+                    "price": price,
+                    "title": title,
+                    "image_url": image,
+                }
+
+            if image_only_fallback is None and (_is_usable_image_url(image) or title):
+                image_only_fallback = {
+                    "price": None,
+                    "title": title,
+                    "image_url": image,
+                }
+
+        if image_only_fallback is not None:
+            return image_only_fallback
     except Exception:
         pass
 
@@ -289,6 +338,38 @@ async def _safe_query_price(platform: str, seed: str) -> Dict[str, Any]:
         )
     except Exception:
         return {"price": None, "title": None, "image_url": None}
+
+
+async def _resolve_image_with_query(
+    doc: Dict[str, Any],
+    current_image: Optional[str],
+    preferred_platform: Optional[str] = None,
+) -> Optional[str]:
+    current = _pick_best_image(current_image)
+    if current:
+        return current
+
+    seed = _query_seed(doc)
+    if not seed:
+        return current_image
+
+    ordered_platforms = [preferred_platform, "amazon", "flipkart", "croma"]
+    unique_platforms = []
+    seen = set()
+    for platform in ordered_platforms:
+        if platform in {"amazon", "flipkart", "croma"} and platform not in seen:
+            unique_platforms.append(platform)
+            seen.add(platform)
+
+    if not unique_platforms:
+        return current_image
+
+    hits = await asyncio.gather(*[_safe_query_price(platform, seed) for platform in unique_platforms])
+    for hit in hits:
+        image = _pick_best_image((hit or {}).get("image_url"))
+        if image:
+            return image
+    return current
 
 
 async def _refresh_product_doc(db, doc: Dict[str, Any]) -> None:
@@ -332,7 +413,13 @@ async def _refresh_product_doc(db, doc: Dict[str, Any]) -> None:
 
     best_price, best_platform = choose_best(prices)
 
-    image_url = doc.get("image_url") or amazon.get("image_url") or flipkart.get("image_url") or croma.get("image_url")
+    image_url = _pick_best_image(
+        doc.get("image_url"),
+        amazon.get("image_url"),
+        flipkart.get("image_url"),
+        croma.get("image_url"),
+    )
+    image_url = await _resolve_image_with_query(doc, image_url, best_platform)
 
     specs = _merge_specifications(
         dict(doc.get("specifications") or {}),
@@ -383,7 +470,8 @@ async def _refresh_product_platform(db, doc: Dict[str, Any], platform: str) -> N
 
     best_price, best_platform = choose_best(prices)
 
-    image_url = doc.get("image_url") or scraped.get("image_url")
+    image_url = _pick_best_image(doc.get("image_url"), scraped.get("image_url"))
+    image_url = await _resolve_image_with_query(doc, image_url, platform)
     specs = _merge_specifications(
         dict(doc.get("specifications") or {}),
         scraped.get("specifications") or {},
@@ -589,10 +677,10 @@ async def get_product(product_id: str):
             best_price, best_platform = choose_best(prices)
 
             if changed:
-                image_url = doc.get("image_url")
+                image_url = _pick_best_image(doc.get("image_url"))
                 if not image_url:
                     for platform in ("amazon", "flipkart", "croma"):
-                        image_url = image_url or (query_hits.get(platform) or {}).get("image_url")
+                        image_url = _pick_best_image(image_url, (query_hits.get(platform) or {}).get("image_url"))
 
                 await db.products.update_one(
                     {"_id": product_id},
@@ -629,12 +717,13 @@ async def get_product(product_id: str):
         )
 
         if _has_meaningful_specs(merged_specs):
-            updated_image = (
-                doc.get("image_url")
-                or amazon_specs.get("image_url")
-                or flipkart_specs.get("image_url")
-                or croma_specs.get("image_url")
+            updated_image = _pick_best_image(
+                doc.get("image_url"),
+                amazon_specs.get("image_url"),
+                flipkart_specs.get("image_url"),
+                croma_specs.get("image_url"),
             )
+            updated_image = await _resolve_image_with_query(doc, updated_image, doc.get("best_platform"))
             refreshed_at = _next_refresh_timestamp(doc.get("last_updated"))
 
             await db.products.update_one(
@@ -776,7 +865,20 @@ async def scrape_product(payload: ProductCreateRequest, _: dict = Depends(get_cu
 
     scraped_title = amazon.get("title") or flipkart.get("title") or croma.get("title")
     title = _prefer_variant_name(scraped_title, payload.variant_name)
-    image_url = amazon.get("image_url") or flipkart.get("image_url") or croma.get("image_url")
+    image_url = _pick_best_image(
+        amazon.get("image_url"),
+        flipkart.get("image_url"),
+        croma.get("image_url"),
+    )
+    image_url = await _resolve_image_with_query(
+        {
+            "brand": payload.brand,
+            "model": payload.model,
+            "variant_name": payload.variant_name,
+        },
+        image_url,
+        best_platform,
+    )
 
     specs = _merge_specifications(
         {},
