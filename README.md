@@ -1,6 +1,6 @@
 ﻿# CompareKart
 
-Last updated: 2026-04-07
+Last updated: 2026-04-08
 
 CompareKart is a smartphone price comparison platform focused on Indian e-commerce marketplaces.
 It combines a FastAPI backend, MongoDB-backed product APIs, and a React Native (Expo) mobile app.
@@ -295,6 +295,55 @@ Build APK:
 For Play Store later:
 
 - Run `eas build -p android --profile production` to create AAB.
+
+---
+
+## 16. Future improvements (rolling roadmap)
+
+This project will be improved continuously. The items below are active next-step targets.
+
+### Product data and quality
+
+- Broaden catalog coverage beyond smartphones (laptops, tablets, accessories)
+- Improve variant normalization to reduce duplicate-looking products
+- Add stronger image/spec fallback rules for partially scraped products
+- Add confidence scoring for scraped price quality
+
+### Scraping reliability
+
+- Add smarter retry scheduling with exponential backoff per platform
+- Add better anti-block handling and dynamic selector recovery
+- Add platform health metrics and automatic temporary disable on repeated failures
+- Add periodic refresh jobs with configurable priority queues
+
+### Backend and APIs
+
+- Add pagination and sorting controls for `/products`
+- Add richer filters (RAM, storage, chipset, brand families)
+- Add cache layer for hot endpoints to reduce latency
+- Add structured audit logs for refresh/retry workflows
+
+### Mobile app UX
+
+- Add saved compare presets and price-drop watchlists
+- Add push notifications for significant price changes
+- Add improved offline handling and cached last-seen results
+- Add deeper product insights view (price history, trend signals)
+
+### Ops and delivery
+
+- Add CI checks for backend + app smoke tests on every push
+- Add scheduled backup/restore validation for MongoDB
+- Add release notes automation for each APK build
+- Add environment health dashboard for backend, DB, and scraper pipelines
+
+### Security and governance
+
+- Rotate secrets regularly and move all secrets to managed secret stores
+- Add stricter auth monitoring and suspicious activity alerts
+- Add role-based admin endpoints for operational actions
+
+This roadmap is intentionally iterative and will evolve with each release.
 
 
 
