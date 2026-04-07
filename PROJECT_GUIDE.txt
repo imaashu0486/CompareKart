@@ -1,0 +1,68 @@
+CompareKart - Project Guide
+===========================
+
+Last updated: 2026-04-07
+
+What this project is
+--------------------
+CompareKart is a smartphone price comparison platform focused on Indian e-commerce marketplaces.
+It combines a FastAPI backend with a React Native (Expo) mobile app.
+
+Current active stack
+--------------------
+1) Backend
+   - Python + FastAPI
+   - Active product flow uses MongoDB (local default)
+   - Scraping services for Amazon, Flipkart, and Croma
+   - Fallback pipeline with guarded Selenium usage
+
+2) Frontend
+   - React Native + Expo
+   - App location: frontend/smart_comparator_app
+   - Features: browse products, compare up to 4 phones, wishlist, product details, retry actions
+
+3) Secondary frontend workspace
+   - Flutter app exists in frontend/comparekart_app
+   - Maintained in repo, but not the main active mobile app flow
+
+Important backend behavior
+--------------------------
+- Price sanitization blocks unrealistic low phone prices
+- Product naming is normalized (Brand + Model as primary label)
+- Retry endpoints are available:
+  - full product retry
+  - single-platform retry
+- Selective fallback runs when a platform price is missing
+
+Main folders
+------------
+- backend/
+  FastAPI app, Mongo integration, scrapers, routes, utility modules
+
+- frontend/smart_comparator_app/
+  React Native app (Expo), screens, components, API integration
+
+- artifacts/
+  generated outputs and downloaded helper artifacts
+
+How to run (quick)
+------------------
+Backend
+- use Python virtual environment
+- install backend/requirements.txt
+- run uvicorn from backend on port 8000
+- check: http://localhost:8000/health
+
+Frontend (React Native)
+- open frontend/smart_comparator_app
+- npm install
+- npx expo start
+
+API docs
+--------
+- Swagger: http://localhost:8000/docs
+
+Notes
+-----
+- Repository has been cleaned and synchronized with remote main.
+- Use README.md for detailed architecture and endpoint notes.
