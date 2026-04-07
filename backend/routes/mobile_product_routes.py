@@ -193,6 +193,28 @@ def _sanitize_prices(category: Optional[str], prices: Dict[str, Any]) -> Dict[st
     }
 
 
+def _is_spec_placeholder(value: Any) -> bool:
+    if value is None:
+        return True
+    text = str(value).strip().lower()
+    return text in {"", "na", "n/a", "not available", "unavailable", "unknown", "--", "-"}
+
+
+def _merge_specifications(existing: Dict[str, Any], *sources: Dict[str, Any]) -> Dict[str, Any]:
+    merged = dict(existing or {})
+    for source in sources:
+        for key, value in (source or {}).items():
+            if _is_spec_placeholder(value):
+                continue
+            if key not in merged or _is_spec_placeholder(merged.get(key)):
+                merged[key] = value
+    return merged
+
+
+def _has_meaningful_specs(specs: Dict[str, Any]) -> bool:
+    return any(not _is_spec_placeholder(v) for v in (specs or {}).values())
+
+
 def _prefer_variant_name(scraped_title: Optional[str], payload_variant_name: str) -> str:
     scraped = (scraped_title or "").strip()
     payload = (payload_variant_name or "").strip()
@@ -312,11 +334,12 @@ async def _refresh_product_doc(db, doc: Dict[str, Any]) -> None:
 
     image_url = doc.get("image_url") or amazon.get("image_url") or flipkart.get("image_url") or croma.get("image_url")
 
-    specs = dict(doc.get("specifications") or {})
-    for source in (amazon, flipkart, croma):
-        for k, v in (source.get("specifications") or {}).items():
-            if k not in specs and v:
-                specs[k] = v
+    specs = _merge_specifications(
+        dict(doc.get("specifications") or {}),
+        amazon.get("specifications") or {},
+        flipkart.get("specifications") or {},
+        croma.get("specifications") or {},
+    )
 
     refresh_time = _next_refresh_timestamp(doc.get("last_updated"))
 
@@ -361,10 +384,10 @@ async def _refresh_product_platform(db, doc: Dict[str, Any], platform: str) -> N
     best_price, best_platform = choose_best(prices)
 
     image_url = doc.get("image_url") or scraped.get("image_url")
-    specs = dict(doc.get("specifications") or {})
-    for k, v in (scraped.get("specifications") or {}).items():
-        if k not in specs and v:
-            specs[k] = v
+    specs = _merge_specifications(
+        dict(doc.get("specifications") or {}),
+        scraped.get("specifications") or {},
+    )
 
     refresh_time = _next_refresh_timestamp(doc.get("last_updated"))
 
@@ -589,6 +612,46 @@ async def get_product(product_id: str):
                 doc["best_platform"] = best_platform
                 doc["image_url"] = image_url
 
+    existing_specs = dict(doc.get("specifications") or {})
+    if not _has_meaningful_specs(existing_specs):
+        scrape_results = await asyncio.gather(
+            _safe_scrape_platform("amazon", doc.get("amazon_url") or "", False),
+            _safe_scrape_platform("flipkart", doc.get("flipkart_url") or "", False),
+            _safe_scrape_platform("croma", doc.get("croma_url") or "", False),
+        )
+        amazon_specs, flipkart_specs, croma_specs = scrape_results
+
+        merged_specs = _merge_specifications(
+            existing_specs,
+            amazon_specs.get("specifications") or {},
+            flipkart_specs.get("specifications") or {},
+            croma_specs.get("specifications") or {},
+        )
+
+        if _has_meaningful_specs(merged_specs):
+            updated_image = (
+                doc.get("image_url")
+                or amazon_specs.get("image_url")
+                or flipkart_specs.get("image_url")
+                or croma_specs.get("image_url")
+            )
+            refreshed_at = _next_refresh_timestamp(doc.get("last_updated"))
+
+            await db.products.update_one(
+                {"_id": product_id},
+                {
+                    "$set": {
+                        "specifications": merged_specs,
+                        "image_url": updated_image,
+                        "last_updated": refreshed_at,
+                    }
+                },
+            )
+
+            doc["specifications"] = merged_specs
+            doc["image_url"] = updated_image
+            doc["last_updated"] = refreshed_at
+
     return _normalize_doc(doc)
 
 
@@ -715,11 +778,12 @@ async def scrape_product(payload: ProductCreateRequest, _: dict = Depends(get_cu
     title = _prefer_variant_name(scraped_title, payload.variant_name)
     image_url = amazon.get("image_url") or flipkart.get("image_url") or croma.get("image_url")
 
-    specs = {}
-    for source in (amazon, flipkart, croma):
-        for k, v in (source.get("specifications") or {}).items():
-            if k not in specs and v:
-                specs[k] = v
+    specs = _merge_specifications(
+        {},
+        amazon.get("specifications") or {},
+        flipkart.get("specifications") or {},
+        croma.get("specifications") or {},
+    )
 
     doc = {
         "_id": product_id,
