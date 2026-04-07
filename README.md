@@ -1,95 +1,119 @@
 ﻿# CompareKart
 
-CompareKart is a production-oriented mobile price comparison platform for smartphones in India.  
-The system aggregates marketplace pricing, normalizes product records, and provides user-facing comparison workflows with resilient retry and refresh controls.
+CompareKart is a mobile-first smartphone price comparison platform built for Indian e-commerce marketplaces. It collects product pricing, applies quality filters, and delivers a reliable compare experience through a resilient backend pipeline and production-oriented mobile UI.
 
-## Project Scope
+---
 
-CompareKart delivers:
+## 1) Project Overview
 
-- Multi-platform phone price aggregation (Amazon, Flipkart, Croma)
+### Primary objective
+Help users quickly identify the best available smartphone price across major platforms.
+
+### Core capabilities
+- Marketplace aggregation across **Amazon**, **Flipkart**, and **Croma**
 - Best-price and best-platform selection per product
-- Product details with per-platform retry and full retry actions
-- Side-by-side comparison for up to 4 products
-- Data-quality safeguards against unrealistic price artifacts
-- Operational refresh endpoints for bulk and targeted updates
+- Side-by-side comparison (up to 4 devices)
+- Product detail enrichment with **full retry** and **platform retry** actions
+- Data quality safeguards (invalid low-price suppression, fallback enrichment)
 
-## Data Acquisition Strategy (Evolution)
+---
 
-The project evolved through three stages:
+## 2) Data Acquisition Journey
 
-1. **Direct marketplace scraping** (requests + BeautifulSoup)
-2. **Search-API experimentation** (Google/SerpAPI exploration during refinement)
-3. **Current stable pipeline**:
-	 - Direct URL scraping as primary path
-	 - Query-based fallback when platform data is missing
-	 - Controlled Selenium fallback for difficult pages
-	 - Selenium guardrail (temporary disable on repeated session failures)
+The data strategy evolved in phases:
 
-This keeps reliability high while preserving data coverage.
+1. **Direct marketplace scraping** using requests + HTML parsing
+2. **Search API experimentation** (Google/SerpAPI exploration during refinement)
+3. **Current production flow**:
+	 - direct URL scrape as primary path
+	 - query-based fallback when direct scrape is incomplete
+	 - Selenium fallback only when necessary
+	 - Selenium circuit-breaker behavior on repeated session instability
 
-## System Architecture
+This approach balances coverage, speed, and operational stability.
 
-### Backend (FastAPI)
+---
 
-- API framework: FastAPI
-- Core routes: product, auth, mobile product/auth routes
-- Scraper services: Amazon, Flipkart, Croma
-- Resilience controls:
-	- per-product and per-platform timeouts
-	- fallback enrichment on missing platform prices
-	- per-product and per-platform retry endpoints
-	- minimum valid phone price threshold filtering
+## 3) Architecture
 
-### Frontend (React Native, Expo)
+### Backend
+- Framework: **FastAPI**
+- Key modules:
+	- `backend/routes/mobile_product_routes.py`
+	- `backend/services/*` (platform scrapers)
+	- `backend/mongo_scraper.py` (aggregation/scrape orchestration helpers)
+	- `backend/utils/selenium_driver.py` (guarded Selenium lifecycle)
+- Reliability features:
+	- per-platform + per-product timeouts
+	- selective fallback enrichment for missing platform values
+	- retry endpoints (`retry-prices`, `retry-platform`)
+	- minimum valid phone price filtering
 
-- Main client: `frontend/smart_comparator_app`
-- Key UX: browse, wishlist, compare, product details, retry actions
-- Compare and detail views consume normalized backend product responses
+### Frontend
+- Framework: **React Native (Expo)**
+- Primary app: `frontend/smart_comparator_app`
+- UX highlights:
+	- premium browse and compare UI
+	- clean product naming (`Brand + Model` as primary)
+	- retry controls from product details
+	- stateful wishlist and compare flows
 
-### Secondary client workspace
+### Secondary workspace
+- `frontend/comparekart_app` (Flutter workspace retained in repo)
 
-- `frontend/comparekart_app` (Flutter workspace kept in repository)
+---
 
-## Database Setup (Local vs Production)
+## 4) Database Clarification (Local vs Production)
 
-**Current default is local database usage.**
+Yes — for the current mobile product flow, the active default is **local MongoDB**.
 
-- Primary active data path (mobile routes): **MongoDB local instance**
-	- default URI: `mongodb://localhost:27017`
-	- configured in backend mongo DB layer using environment fallback
-- Legacy SQL artifacts also exist in repository (SQLite-oriented modules and `.db` files) for earlier flow compatibility.
+- Default Mongo URI fallback: `mongodb://localhost:27017`
+- Implemented in Mongo DB access layer (`backend/mongo_db.py`)
 
-For your current working mobile flow, MongoDB local is the primary source.
+Legacy SQL/SQLite scaffolding is still present for earlier compatibility paths, but the live mobile routes are backed by MongoDB.
 
-## Important API Endpoints
+---
+
+## 5) API Surface (Key Endpoints)
 
 - `GET /health`
 - `GET /products`
 - `GET /product/{product_id}`
 - `POST /product/{product_id}/retry-prices`
-- `POST /product/{product_id}/retry-platform/{platform}` where platform is `amazon|flipkart|croma`
+- `POST /product/{product_id}/retry-platform/{platform}` where `platform ∈ {amazon, flipkart, croma}`
 - `POST /update-prices`
 - `POST /update-prices-quick`
 
-## Local Run
+---
+
+## 6) Local Development
 
 ### Backend
-
 1. Create and activate Python virtual environment
-2. Install backend dependencies
-3. Start API on port 8000
-4. Verify `GET /health` returns 200
+2. Install dependencies from `backend/requirements.txt`
+3. Start backend on port 8000
+4. Verify health endpoint returns 200
 
-### Mobile app
-
-1. Go to `frontend/smart_comparator_app`
+### Mobile App (React Native)
+1. Open `frontend/smart_comparator_app`
 2. Install dependencies
-3. Start Expo
-4. Run on emulator/device
+3. Start Expo dev server
+4. Launch on emulator or physical device
 
-## Submission Readiness Notes
+---
 
-- Repository markdown clutter was consolidated to this single README.
-- Root `.gitignore` is configured for virtual environments, build outputs, caches, logs, local DB files, and artifacts.
-- Project is initialized for git with main branch, ready for commit and push.
+## 7) Quality and Reliability Notes
+
+- API responses are sanitized before being exposed to client UI
+- Missing platform prices can be enriched on-demand
+- Retry actions are available at both product and platform granularity
+- Selenium fallback is guarded to reduce cascading failures from unstable sessions
+
+---
+
+## 8) Submission Readiness
+
+- Documentation consolidated into this single root README
+- Root `.gitignore` configured to exclude environments, build outputs, logs, artifacts, and local data files
+- Repository initialized and structured for clean git push
+
