@@ -34,6 +34,21 @@ PER_PLATFORM_TIMEOUT_SECONDS = 12
 MIN_PHONE_PRICE = 5000
 
 
+def _next_refresh_timestamp(previous: Any) -> datetime:
+    now = now_utc()
+    if not isinstance(previous, datetime):
+        return now
+
+    prev = previous
+    if prev.tzinfo is None:
+        prev = prev.replace(tzinfo=now.tzinfo)
+
+    # Ensure visible progression for rapid consecutive retries.
+    if now <= prev:
+        return prev + timedelta(seconds=1)
+    return now
+
+
 def _normalize_doc(doc: Dict[str, Any]) -> ProductResponse:
     prices = _sanitize_prices(doc.get("category"), dict(doc.get("prices") or {}))
     best_price, best_platform = choose_best(prices)
@@ -303,6 +318,8 @@ async def _refresh_product_doc(db, doc: Dict[str, Any]) -> None:
             if k not in specs and v:
                 specs[k] = v
 
+    refresh_time = _next_refresh_timestamp(doc.get("last_updated"))
+
     await db.products.update_one(
         {"_id": doc["_id"]},
         {
@@ -312,7 +329,7 @@ async def _refresh_product_doc(db, doc: Dict[str, Any]) -> None:
                 "best_platform": best_platform,
                 "image_url": image_url,
                 "specifications": specs,
-                "last_updated": now_utc(),
+                "last_updated": refresh_time,
             }
         },
     )
@@ -349,6 +366,8 @@ async def _refresh_product_platform(db, doc: Dict[str, Any], platform: str) -> N
         if k not in specs and v:
             specs[k] = v
 
+    refresh_time = _next_refresh_timestamp(doc.get("last_updated"))
+
     await db.products.update_one(
         {"_id": doc["_id"]},
         {
@@ -358,7 +377,7 @@ async def _refresh_product_platform(db, doc: Dict[str, Any], platform: str) -> N
                 "best_platform": best_platform,
                 "image_url": image_url,
                 "specifications": specs,
-                "last_updated": now_utc(),
+                "last_updated": refresh_time,
             }
         },
     )
@@ -560,7 +579,7 @@ async def get_product(product_id: str):
                             "best_price": best_price,
                             "best_platform": best_platform,
                             "image_url": image_url,
-                            "last_updated": now_utc(),
+                            "last_updated": _next_refresh_timestamp(doc.get("last_updated")),
                         }
                     },
                 )
@@ -583,8 +602,11 @@ async def retry_product_prices(product_id: str):
     try:
         await asyncio.wait_for(_refresh_product_doc(db, doc), timeout=PER_PRODUCT_TIMEOUT_SECONDS)
     except Exception:
-        # Keep endpoint resilient; return latest stored data if refresh attempt fails.
-        pass
+        # Keep endpoint resilient; still stamp refresh attempt time for UI visibility.
+        await db.products.update_one(
+            {"_id": product_id},
+            {"$set": {"last_updated": _next_refresh_timestamp(doc.get("last_updated"))}},
+        )
 
     latest = await db.products.find_one({"_id": product_id})
     if not latest:
@@ -606,7 +628,10 @@ async def retry_product_platform_price(product_id: str, platform: str):
     try:
         await asyncio.wait_for(_refresh_product_platform(db, doc, platform), timeout=PER_PRODUCT_TIMEOUT_SECONDS)
     except Exception:
-        pass
+        await db.products.update_one(
+            {"_id": product_id},
+            {"$set": {"last_updated": _next_refresh_timestamp(doc.get("last_updated"))}},
+        )
 
     latest = await db.products.find_one({"_id": product_id})
     if not latest:
