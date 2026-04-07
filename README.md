@@ -243,6 +243,59 @@ This avoids hardcoded machine-specific addresses in most cases.
 - API health: `http://localhost:8000/health`
 - API docs: `http://localhost:8000/docs`
 
+---
+
+## 15. Deploy online (backend + database + APK)
+
+### A) Online database (MongoDB Atlas)
+
+1. Create a MongoDB Atlas cluster.
+2. Create database user + password.
+3. Add IP access (or `0.0.0.0/0` for initial setup).
+4. Copy connection string as `MONGO_URI`.
+
+### B) Backend always running (Render)
+
+This repo includes:
+
+- [render.yaml](render.yaml)
+- [backend/Dockerfile](backend/Dockerfile)
+
+Deploy steps:
+
+1. Push code to GitHub.
+2. In Render, create service from repo (Blueprint or Web Service).
+3. Set env vars in Render:
+	- `MONGO_URI` = Atlas connection string
+	- `MONGO_DB_NAME` = `smart_price_comparator` (or your value)
+	- `JWT_SECRET` = strong random secret
+	- `JWT_EXPIRE_MINUTES` = `10080`
+4. Deploy and verify:
+	- `https://<your-backend-domain>/health`
+
+### C) Android APK (Expo EAS)
+
+This repo includes:
+
+- [frontend/smart_comparator_app/eas.json](frontend/smart_comparator_app/eas.json)
+
+Before build:
+
+1. Replace `https://YOUR_BACKEND_DOMAIN` in `eas.json` with deployed backend URL.
+2. Install and login:
+	- `npm install -g eas-cli`
+	- `eas login`
+
+Build APK:
+
+1. Go to `frontend/smart_comparator_app`
+2. Run `eas build -p android --profile preview`
+3. Download APK from EAS build URL and install on mobile.
+
+For Play Store later:
+
+- Run `eas build -p android --profile production` to create AAB.
+
 
 
 
