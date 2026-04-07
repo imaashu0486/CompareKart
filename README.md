@@ -1,119 +1,248 @@
 ﻿# CompareKart
 
-CompareKart is a mobile-first smartphone price comparison platform built for Indian e-commerce marketplaces. It collects product pricing, applies quality filters, and delivers a reliable compare experience through a resilient backend pipeline and production-oriented mobile UI.
+Last updated: 2026-04-07
+
+CompareKart is a smartphone price comparison platform focused on Indian e-commerce marketplaces.
+It combines a FastAPI backend, MongoDB-backed product APIs, and a React Native (Expo) mobile app.
+
+The goal is straightforward: fetch marketplace prices, clean noisy values, and present a dependable compare experience.
 
 ---
 
-## 1) Project Overview
+## 1. What this project does
 
-### Primary objective
-Help users quickly identify the best available smartphone price across major platforms.
-
-### Core capabilities
-- Marketplace aggregation across **Amazon**, **Flipkart**, and **Croma**
-- Best-price and best-platform selection per product
-- Side-by-side comparison (up to 4 devices)
-- Product detail enrichment with **full retry** and **platform retry** actions
-- Data quality safeguards (invalid low-price suppression, fallback enrichment)
+- Aggregates smartphone pricing from Amazon, Flipkart, and Croma
+- Computes `best_price` and `best_platform` per product
+- Supports side-by-side comparison (up to 4 products)
+- Provides retry controls for incomplete data:
+	- full product retry
+	- single-platform retry
+- Normalizes product naming so UI titles stay clear (`Brand + Model`)
 
 ---
 
-## 2) Data Acquisition Journey
-
-The data strategy evolved in phases:
-
-1. **Direct marketplace scraping** using requests + HTML parsing
-2. **Search API experimentation** (Google/SerpAPI exploration during refinement)
-3. **Current production flow**:
-	 - direct URL scrape as primary path
-	 - query-based fallback when direct scrape is incomplete
-	 - Selenium fallback only when necessary
-	 - Selenium circuit-breaker behavior on repeated session instability
-
-This approach balances coverage, speed, and operational stability.
-
----
-
-## 3) Architecture
+## 2. High-level architecture
 
 ### Backend
-- Framework: **FastAPI**
-- Key modules:
+
+- Framework: FastAPI
+- Main entry: `backend/main.py`
+- Active routes:
+	- `backend/routes/mobile_auth_routes.py`
 	- `backend/routes/mobile_product_routes.py`
-	- `backend/services/*` (platform scrapers)
-	- `backend/mongo_scraper.py` (aggregation/scrape orchestration helpers)
-	- `backend/utils/selenium_driver.py` (guarded Selenium lifecycle)
-- Reliability features:
-	- per-platform + per-product timeouts
-	- selective fallback enrichment for missing platform values
-	- retry endpoints (`retry-prices`, `retry-platform`)
-	- minimum valid phone price filtering
+- Data layer: MongoDB via `backend/mongo_db.py`
+- Scraping and fallback orchestration:
+	- `backend/services/amazon_service.py`
+	- `backend/services/flipkart_service.py`
+	- `backend/services/croma_service.py`
+	- `backend/mongo_scraper.py`
+- Selenium guard and fallback control:
+	- `backend/utils/selenium_driver.py`
 
 ### Frontend
-- Framework: **React Native (Expo)**
-- Primary app: `frontend/smart_comparator_app`
-- UX highlights:
-	- premium browse and compare UI
-	- clean product naming (`Brand + Model` as primary)
-	- retry controls from product details
-	- stateful wishlist and compare flows
 
-### Secondary workspace
-- `frontend/comparekart_app` (Flutter workspace retained in repo)
+- Framework: React Native + Expo
+- Main app: `frontend/smart_comparator_app`
+- App shell: `frontend/smart_comparator_app/App.js`
+- Navigation: `frontend/smart_comparator_app/src/navigation/RootNavigator.js`
+- Auth state: `frontend/smart_comparator_app/src/context/AuthContext.js`
+- Product/app state: `frontend/smart_comparator_app/src/store/AppStore.js`
+- API client: `frontend/smart_comparator_app/src/services/api.js`
 
----
+### Secondary workspace in repo
 
-## 4) Database Clarification (Local vs Production)
-
-Yes — for the current mobile product flow, the active default is **local MongoDB**.
-
-- Default Mongo URI fallback: `mongodb://localhost:27017`
-- Implemented in Mongo DB access layer (`backend/mongo_db.py`)
-
-Legacy SQL/SQLite scaffolding is still present for earlier compatibility paths, but the live mobile routes are backed by MongoDB.
+- Flutter app exists in `frontend/comparekart_app`
+- Active mobile flow is the React Native app above
 
 ---
 
-## 5) API Surface (Key Endpoints)
+## 3. Backend lifecycle and runtime behavior
+
+When the API server starts:
+
+1. Environment variables are loaded.
+2. SQL init path runs for compatibility.
+3. Mongo indexes are initialized.
+4. Product and auth routers are mounted.
+
+When the server stops:
+
+- Mongo client is closed cleanly.
+
+Health and docs:
 
 - `GET /health`
+- Swagger docs at `/docs`
+
+---
+
+## 4. Data model (practical view)
+
+Typical product fields include:
+
+- `category`, `brand`, `model`, `variant_name`
+- `amazon_url`, `flipkart_url`, `croma_url`
+- `prices`: `{ amazon, flipkart, croma }`
+- `best_price`, `best_platform`
+- `image_url`, `specifications`, `last_updated`
+
+Before response output, prices are sanitized and best-price selection is recomputed.
+
+---
+
+## 5. Price quality controls
+
+The API filters out bad values before sending data to the app.
+
+Key logic:
+
+- Invalid numeric values are dropped
+- Non-positive values are dropped
+- For phone categories, very low values (offer/EMI artifacts) are blocked
+- `best_price` is selected only from valid platform prices
+
+This is why obviously wrong values do not appear in compare cards.
+
+---
+
+## 6. Scraping pipeline and fallback strategy
+
+Price refresh follows a layered strategy:
+
+1. Direct platform scrape from product URLs
+2. If data is missing, query-based fallback per platform
+3. Selenium fallback only when needed
+4. Merge + sanitize + update document
+
+Reliability protections:
+
+- per-platform timeout
+- per-product timeout
+- cache freshness checks
+- guarded Selenium behavior for repeated failures
+
+---
+
+## 7. Auth flow
+
+Backend auth endpoints:
+
+- `POST /auth/signup`
+- `POST /auth/login`
+- `GET /auth/me`
+
+Auth implementation details:
+
+- password hashing with PBKDF2
+- JWT bearer tokens (`HS256`)
+- token persisted on device in AsyncStorage
+- app restores session on launch and hydrates user profile
+
+---
+
+## 8. Product refresh and retry endpoints
+
+Core endpoints:
+
 - `GET /products`
 - `GET /product/{product_id}`
 - `POST /product/{product_id}/retry-prices`
-- `POST /product/{product_id}/retry-platform/{platform}` where `platform ∈ {amazon, flipkart, croma}`
+- `POST /product/{product_id}/retry-platform/{platform}` where `platform` is `amazon`, `flipkart`, or `croma`
 - `POST /update-prices`
 - `POST /update-prices-quick`
 
+Why retries exist:
+
+- marketplace pages are dynamic
+- one platform can fail while others succeed
+- targeted retries reduce unnecessary scraping load
+
 ---
 
-## 6) Local Development
+## 9. Frontend behavior and state
+
+The app keeps two main state layers:
+
+1. Auth/session state (`AuthContext`)
+2. Product + compare + wishlist state (`AppStore`)
+
+Key UX behavior:
+
+- compare list capped at 4 products
+- wishlist and recent searches persisted
+- compare and details screens consume normalized product data
+- retry actions are accessible from product detail views
+
+---
+
+## 10. API base URL resolution (Expo)
+
+The app resolves backend URL in this order:
+
+1. `EXPO_PUBLIC_API_BASE_URL`
+2. host information from Expo runtime
+3. fallback defaults:
+	 - Android emulator: `http://10.0.2.2:8000`
+	 - iOS/local: `http://localhost:8000`
+
+This avoids hardcoded machine-specific addresses in most cases.
+
+---
+
+## 11. Local development
 
 ### Backend
-1. Create and activate Python virtual environment
+
+1. Create/activate virtual environment
 2. Install dependencies from `backend/requirements.txt`
-3. Start backend on port 8000
-4. Verify health endpoint returns 200
+3. Start server from `backend`:
+	 - `uvicorn main:app --host 0.0.0.0 --port 8000`
+4. Check `http://localhost:8000/health`
 
-### Mobile App (React Native)
-1. Open `frontend/smart_comparator_app`
-2. Install dependencies
-3. Start Expo dev server
-4. Launch on emulator or physical device
+### React Native app
 
----
-
-## 7) Quality and Reliability Notes
-
-- API responses are sanitized before being exposed to client UI
-- Missing platform prices can be enriched on-demand
-- Retry actions are available at both product and platform granularity
-- Selenium fallback is guarded to reduce cascading failures from unstable sessions
+1. Go to `frontend/smart_comparator_app`
+2. Install dependencies (`npm install`)
+3. Start Expo (`npx expo start`)
+4. Run on emulator/device
 
 ---
 
-## 8) Submission Readiness
+## 12. Repository notes
 
-- Documentation consolidated into this single root README
-- Root `.gitignore` configured to exclude environments, build outputs, logs, artifacts, and local data files
-- Repository initialized and structured for clean git push
+- Active production-like path is Mongo + mobile routes + React Native app
+- Legacy SQL-era files are retained for compatibility/history
+- Flutter workspace remains in repo as secondary implementation
+
+---
+
+## 13. Quick troubleshooting
+
+### Backend not reachable
+
+- verify venv activation and dependency installation
+- confirm port 8000 is free
+- check startup logs for import/env errors
+
+### App cannot call API on emulator
+
+- confirm backend health works from host
+- verify resolved base URL behavior
+- on Android emulator, use `10.0.2.2`
+
+### Missing price on one platform
+
+- run platform retry endpoint first
+- then run full retry if still incomplete
+- confirm product has that platform URL saved
+
+---
+
+## 14. Useful URLs
+
+- API health: `http://localhost:8000/health`
+- API docs: `http://localhost:8000/docs`
+
+
+
 
