@@ -4,6 +4,23 @@ import { api } from '../api/client';
 import { getFixedPhoneSpecificationRows } from '../utils/specifications';
 import { getPrimaryProductName, getVariantBadgeText } from '../utils/productName';
 
+function formatIndianDateTime(value) {
+  if (!value) return 'Unknown';
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return 'Unknown';
+
+  return new Intl.DateTimeFormat('en-IN', {
+    timeZone: 'Asia/Kolkata',
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true,
+  }).format(dt) + ' IST';
+}
+
 function PriceRow({ label, value, isBest, url }) {
   return (
     <View style={[styles.priceRow, isBest && styles.bestRow]}>
@@ -56,8 +73,7 @@ export default function ProductDetailsScreen({ route }) {
   };
 
   const specRows = getFixedPhoneSpecificationRows(item);
-  const refreshedAt = item?.last_updated ? new Date(item.last_updated) : null;
-  const refreshedAtLabel = refreshedAt && !Number.isNaN(refreshedAt.getTime()) ? refreshedAt.toLocaleString() : 'Unknown';
+  const refreshedAtLabel = formatIndianDateTime(item?.last_updated);
 
   const bestUrl = item.best_platform === 'amazon'
     ? item.amazon_url

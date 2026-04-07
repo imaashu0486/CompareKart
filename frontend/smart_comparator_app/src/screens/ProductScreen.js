@@ -14,6 +14,23 @@ import { getPrimaryProductName, getVariantBadgeText } from '../utils/productName
 const PLACEHOLDER_IMAGE = 'https://placehold.co/1000x700/f0f3f8/9da7b6.png';
 const hasValidPrice = (value) => typeof value === 'number' && Number.isFinite(value) && value > 0;
 
+const formatIndianDateTime = (value) => {
+  if (!value) return 'Unknown';
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return 'Unknown';
+
+  return new Intl.DateTimeFormat('en-IN', {
+    timeZone: 'Asia/Kolkata',
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true,
+  }).format(dt) + ' IST';
+};
+
 const getBestLink = (item) => {
   if (item?.best_platform === 'amazon') return item?.amazon_url;
   if (item?.best_platform === 'flipkart') return item?.flipkart_url;
@@ -85,8 +102,7 @@ export default function ProductScreen({ route, navigation }) {
   const canOpenBestDeal = hasValidPrice(item?.best_price) && !!bestLink;
   const primaryName = getPrimaryProductName(item);
   const variantBadge = getVariantBadgeText(item);
-  const refreshedAt = item?.last_updated ? new Date(item.last_updated) : null;
-  const refreshedAtLabel = refreshedAt && !Number.isNaN(refreshedAt.getTime()) ? refreshedAt.toLocaleString() : 'Unknown';
+  const refreshedAtLabel = formatIndianDateTime(item?.last_updated);
 
   const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: colors.background },
