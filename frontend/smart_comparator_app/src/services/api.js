@@ -2,9 +2,15 @@ import axios from 'axios';
 import { Platform } from 'react-native';
 import Constants from 'expo-constants';
 
+const PRODUCTION_API_BASE_URL = 'https://comparekart-puc5.onrender.com';
+
 function resolveApiBaseUrl() {
   if (process.env.EXPO_PUBLIC_API_BASE_URL) {
     return process.env.EXPO_PUBLIC_API_BASE_URL;
+  }
+
+  if (!__DEV__) {
+    return PRODUCTION_API_BASE_URL;
   }
 
   const hostUri =

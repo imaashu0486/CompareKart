@@ -30,6 +30,6 @@
     "react-native-screens": "~4.16.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^55.0.15"
+    "babel-preset-expo": "~54.0.10"
   }
 }

@@ -4,10 +4,20 @@ import { api } from '../api/client';
 import { getFixedPhoneSpecificationRows } from '../utils/specifications';
 import { getPrimaryProductName, getVariantBadgeText } from '../utils/productName';
 
+function parseServerDate(value) {
+  if (!value) return null;
+  const raw = String(value).trim();
+  if (!raw) return null;
+
+  // Some stored datetimes may arrive without timezone info; treat them as UTC.
+  const normalized = /(Z|[+\-]\d{2}:?\d{2})$/.test(raw) ? raw : `${raw}Z`;
+  const dt = new Date(normalized);
+  return Number.isNaN(dt.getTime()) ? null : dt;
+}
+
 function formatIndianDateTime(value) {
-  if (!value) return 'Unknown';
-  const dt = new Date(value);
-  if (Number.isNaN(dt.getTime())) return 'Unknown';
+  const dt = parseServerDate(value);
+  if (!dt) return 'Unknown';
 
   return new Intl.DateTimeFormat('en-IN', {
     timeZone: 'Asia/Kolkata',

@@ -12,7 +12,7 @@ export function getApiErrorMessage(error, fallback = 'Request failed') {
   }
 
   if (typeof error?.message === 'string' && error.message.includes('Network Error')) {
-    return 'Cannot connect to server. Make sure backend is running on port 8000.';
+    return 'Cannot connect to server. Please check your internet connection or backend URL.';
   }
 
   if (typeof error?.message === 'string' && error.message.trim()) {
